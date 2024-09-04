@@ -1,0 +1,96 @@
+/* Navbar.module.css */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000; /* Ensure it stays on top */
+    transition: background 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background: rgba(0, 0, 0, 1);
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    color: #ff7e5f;
+  }
+  
+  /* Menu Toggle Styles */
+  .menuToggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menuToggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+  
+  /* Show menu toggle icon on mobile screens */
+  @media (max-width: 768px) {
+    .navLinks {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .navLinks.show {
+      display: flex;
+    }
+  
+    .menuToggle {
+      display: flex;
+    }
+  
+    .menuToggle.open .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+  
+    .menuToggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .menuToggle.open .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  
+    .navLinks li {
+      margin: 10px 0;
+    }
+  }
+  

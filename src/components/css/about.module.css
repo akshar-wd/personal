@@ -1,0 +1,582 @@
+
+
+ /* .center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book {
+  width: 400px;
+  height: 300px;
+  position: relative;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.page {
+  width: 380px;
+  height: 270px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 7mm;
+  margin: 0 6px;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: 0.25s;
+  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.15), 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.page_side {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-family: poppins;
+  border-radius: 7mm;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.page_head {
+  width: 100%;
+}
+
+.page_title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.page_subtitle {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.page_content {
+  flex-grow: 1;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.page_footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.pg_no {
+  width: 14px;
+  padding: 0 15px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: rgb(40, 40, 40);
+  background: white;
+  border-radius: 3mm;
+}
+
+.front {
+  background: rgb(255, 228, 130);
+  color: rgb(40, 40, 40);
+  padding-left: 40px;
+}
+
+.back {
+  background: rgb(40, 40, 40);
+  color: white;
+  padding-right: 40px;
+  transform: rotateY(180deg);
+}
+
+.beads {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.bead {
+  width: 36px;
+  height: 12px;
+  background: white;
+  border-radius: 5mm;
+  z-index: 9999;
+  box-shadow: inset 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+    inset 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  width: 350px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls button {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border: 0.4mm solid rgb(40, 40, 40);
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+/* @media (max-width: 768px) {
+  .book {
+    width: 300px;
+    height: 225px;
+  }
+
+  .page {
+    width: 280px;
+    height: 200px;
+    margin: 0 4px;
+  }
+
+  .page_side {
+    padding: 15px 20px;
+  }
+
+  .page_title {
+    font-size: 30px;
+  }
+
+  .page_subtitle {
+    font-size: 10px;
+  }
+
+  .page_content {
+    font-size: 12px;
+  }
+
+  .page_footer {
+    font-size: 12px;
+  }
+
+  .pg_no {
+    width: 12px;
+    height: 18px;
+    line-height: 18px;
+  }
+
+  .front {
+    padding-left: 30px;
+  }
+
+  .back {
+    padding-right: 30px;
+  }
+
+  .controls {
+    width: 280px;
+  }
+
+  .controls button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .beads {
+    left: -10px;
+    height: 200px;
+  }
+
+  .bead {
+    width: 30px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book {
+    width: 240px;
+    height: 180px;
+  }
+
+  .page {
+    width: 220px;
+    height: 160px;
+    margin: 0 2px;
+  }
+
+  .page_side {
+    padding: 10px 15px;
+  }
+
+  .page_title {
+    font-size: 24px;
+  }
+
+  .page_subtitle {
+    font-size: 8px;
+  }
+
+  .page_content {
+    font-size: 10px;
+  }
+
+  .page_footer {
+    font-size: 10px;
+  }
+
+  .pg_no {
+    width: 10px;
+    height: 15px;
+    line-height: 15px;
+  }
+
+  .front {
+    padding-left: 20px;
+  }
+
+  .back {
+    padding-right: 20px;
+  }
+
+  .controls {
+    width: 220px;
+  }
+
+  .controls button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .beads {
+    left: -8px;
+    height: 160px;
+  }
+
+  .bead {
+    width: 24px;
+    height: 8px;
+  }
+} */ 
+
+
+/* Container for the book, leaving space for the navbar */
+.title_page{
+  color:#d8a8a8;
+  font-size: 2.25rem; 
+  font-weight: bold; 
+}
+.center {
+  width: 100%;
+  min-height: calc(100vh - 200px); /* Adjust this to match the height of your navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px; /* Extra space for breathing room */
+  box-sizing: border-box;
+  
+}
+
+.book {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  margin-top: 60px; /* Adjust to match the navbar height */
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.page {
+  width: 380px;
+  height: 270px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 7mm;
+  margin: 0 6px;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: 0.25s;
+  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.15), 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.page_side {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  border-radius: 7mm;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.page_head {
+  width: 100%;
+}
+
+.page_title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.page_subtitle {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.page_content {
+  flex-grow: 1;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.page_footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.pg_no {
+  width: 14px;
+  padding: 0 15px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: rgb(40, 40, 40);
+  background: white;
+  border-radius: 3mm;
+}
+
+.front {
+  background: rgb(255, 228, 130);
+  color: rgb(40, 40, 40);
+  padding-left: 40px;
+}
+
+.back {
+  background: rgb(40, 40, 40);
+  color: white;
+  padding-right: 40px;
+  transform: rotateY(180deg);
+}
+
+.beads {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.bead {
+  width: 36px;
+  height: 12px;
+  background: white;
+  border-radius: 5mm;
+  z-index: 9999;
+  box-shadow: inset 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+    inset 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  width: 395px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls button {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border: 0.4mm solid rgb(40, 40, 40);
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .book {
+    width: 300px;
+    height: 225px;
+  }
+
+  .page {
+    width: 280px;
+    height: 200px;
+    margin: 0 4px;
+  }
+
+  .page_side {
+    padding: 15px 20px;
+  }
+
+  .page_title {
+    font-size: 30px;
+  }
+
+  .page_subtitle {
+    font-size: 10px;
+  }
+
+  .page_content {
+    font-size: 12px;
+  }
+
+  .page_footer {
+    font-size: 12px;
+  }
+
+  .pg_no {
+    width: 12px;
+    height: 18px;
+    line-height: 18px;
+  }
+
+  .front {
+    padding-left: 30px;
+  }
+
+  .back {
+    padding-right: 30px;
+  }
+
+  .controls {
+    width: 290px;
+  }
+
+  .controls button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .beads {
+    left: -10px;
+    height: 200px;
+  }
+
+  .bead {
+    width: 30px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book {
+    width: 240px;
+    height: 180px;
+  }
+
+  .page {
+    width: 220px;
+    height: 160px;
+    margin: 0 2px;
+  }
+
+  .page_side {
+    padding: 10px 15px;
+  }
+
+  .page_title {
+    font-size: 24px;
+  }
+
+  .page_subtitle {
+    font-size: 8px;
+  }
+
+  .page_content {
+    font-size: 10px;
+  }
+
+  .page_footer {
+    font-size: 10px;
+  }
+
+  .pg_no {
+    width: 10px;
+    height: 15px;
+    line-height: 15px;
+  }
+
+  .front {
+    padding-left: 20px;
+  }
+
+  .back {
+    padding-right: 20px;
+  }
+
+  .controls {
+    width: 230px;
+  }
+
+  .controls button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .beads {
+    left: -8px;
+    height: 160px;
+  }
+
+  .bead {
+    width: 24px;
+    height: 8px;
+  }
+}
