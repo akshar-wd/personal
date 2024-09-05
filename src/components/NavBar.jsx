@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>MySite</div>
+      <div className={styles.logo}>1 Year</div>
       <div className={`${styles.menuToggle} ${isMenuOpen ? styles.open : ''}`} onClick={toggleMenu}>
         <div className={styles.bar}></div>
         <div className={styles.bar}></div>

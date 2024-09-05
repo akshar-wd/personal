@@ -11,9 +11,9 @@ const cardData = [
   },
   {
     title: "Letter 2",
-    description: "Old letter",
-    image: "/assets/photo_2023-11-02_00-44-44.jpg",
-    href: "https://spotted-venom-03b.notion.site/Letter-2-75f953540a324c4ca5b8c1fb53535e57?pvs=4"
+    description: "Trips",
+    image: "/assets/mumbai again.jpg",
+    href: "https://spotted-venom-03b.notion.site/Letter-2-323a17c92eee4e24ba8c2559140dac74?pvs=4"
   },
 ];
 
